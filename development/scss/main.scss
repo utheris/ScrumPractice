@@ -5,6 +5,7 @@
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
 
 
-body{
-  background-color: #BADA55;
-}
+@import "./settings/all";
+@import "./generic/reset";
+@import "./elements/base";
+
