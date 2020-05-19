@@ -1,0 +1,48 @@
+.newsletter {
+    background-color: $newsletterBgColor;
+    width: 1440px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 130px;
+
+    h3 {
+        color: white;
+        font-size: 48px;
+        font-weight: normal;
+    }
+
+    .inputs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input[type=text] {
+            width: 280px;
+            padding: 15px;
+            font-size: 20px;
+            border: none;
+
+            &:focus {
+                outline: none;
+                border: 1px solid $buttonsBgColor;
+            }
+        }
+
+        input[type=submit] {
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            padding: 15px 35px;
+            border: none;
+            background-color: $buttonsBgColor;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
