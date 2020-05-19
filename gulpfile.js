@@ -11,7 +11,7 @@ gulp.task("watch", function (cb) {
 
 gulp.task("serve", function (cb) {
   browserSync.init({
-    server: "./development"
+    server: "./development",
   });
   gulp.watch("development/scss/**/*.scss", gulp.series("sass"));
   gulp.watch("development/*.html").on("change", browserSync.reload);
@@ -27,7 +27,7 @@ gulp.task("sass", function () {
     .pipe(sourcemaps.init())
     .pipe(
       autoprefixer({
-        browsers: ["last 4 versions"]
+        browsers: ["last 4 versions"],
       })
     )
     .pipe(sourcemaps.write())
