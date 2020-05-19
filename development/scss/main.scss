@@ -9,3 +9,6 @@
 @import "./generic/reset";
 @import "./elements/base";
 
+body {
+    font-family: $fontDefault;
+}
