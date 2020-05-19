@@ -1,0 +1,80 @@
+.slideshow-container {
+  width: $mainWidth;
+  margin: 0 auto;
+  height: 80vh;
+  position: relative;
+
+  .btn {
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+
+    &.btn-next {
+      left: 97%;
+    }
+
+    &.btn-prev {
+      left: 2%;
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  li {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-size: cover;
+
+    &:nth-of-type(1) {
+      background-image: url(/development/img/burger.jpg);
+    }
+
+    &:nth-of-type(2) {
+      background-image: url(/development/img/salads.jpg);
+    }
+
+    &:nth-of-type(3) {
+      background-image: url(/development/img/vegie.jpg);
+    }
+  }
+
+  .visible {
+    display: inline-block;
+  }
+}
