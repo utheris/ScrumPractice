@@ -7,4 +7,12 @@
 
 @import "./settings/all";
 @import "./generic/reset";
+<<<<<<< HEAD
 @import "./elements/base";
+=======
+@import "./elements/base";
+
+body {
+    font-family: $fontDefault;
+}
+>>>>>>> master
