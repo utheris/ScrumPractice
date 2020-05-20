@@ -1,0 +1,75 @@
+#features {
+    width: 100%;
+    background-color: $contactBgColor;
+
+    .contact.container {
+        width: 1200px;
+        height: 300px;
+        margin: 0 auto;
+        display: flex;
+        flex: 1 0 auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        color: $contactTextColor;
+
+        .contact__info {
+            width: 33%;
+
+            span {
+                font-size: 32px;
+                margin-bottom: 30px;
+                display: inline-block;
+            }
+
+            p {
+                font-size: 24px;
+            }
+        }
+
+        .contact__activity {
+            width: 33%;
+            margin-right: 50px;
+            margin-left: 50px;
+
+            span {
+                font-size: 32px;
+                margin-bottom: 30px;
+                display: inline-block;
+            }
+
+            ol {
+                li {
+                    font-size: 24px;
+                    line-height: 36px;
+
+                    &:before {
+                        content: '\2022';
+                        margin-right: 24px;
+                    }
+                }
+            }
+
+        }
+
+        .contact__social {
+            width: 33%;
+            align-self: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            a {
+                color: $contactTextColor;
+                font-size: 40px;
+
+                &:nth-of-type(2) {
+                    margin-right: 50px;
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
+}
