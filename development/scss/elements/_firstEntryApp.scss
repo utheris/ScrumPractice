@@ -1,0 +1,47 @@
+.first_entry {
+    background-color: #FFFFFA;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3vh 15vw;
+    color: $dashboardTextColor;
+
+    & * {
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 44px;
+        margin-top: 50px;
+    }
+
+    p {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    input[type=text] {
+        font-size: 30px;
+        padding: 5px;
+
+        &::placeholder {
+            color: $placeholderColor;
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid $buttonsBgColor;
+        }
+    }
+
+    input[type=submit] {
+        background-color: $buttonsBgColor;
+        padding: 10px 20px;
+        border: none;
+        font-size: 26px;
+        color: white;
+        cursor: pointer;
+    }
+}
