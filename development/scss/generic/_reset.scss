@@ -8,6 +8,13 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+  height: 100vh;
 }
