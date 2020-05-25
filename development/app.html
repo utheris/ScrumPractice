@@ -39,9 +39,97 @@
           <p>Podaj swoje imię, a my zorganizujemy dla ciebie naszą aplikację</p>
 
         </section>
-
-        <section>
-          <!-- Dashboard -->
+        <!-- 3.1 Pulpit -->
+        <section class="pulpit">
+          <div class="widgets">
+            <!-- Dodawanie przepisu i planu -->
+            <div class="buttons">
+              <button class="button button--recipe-add"><i class="far fa-plus-square"></i><span>Dodaj
+                  przepis</span></button>
+              <button class="button button--plan-add"><i class="far fa-plus-square"></i><span>Dodaj plan</span></button>
+            </div>
+            <!-- Informacje po włączniu aplikacji -->
+            <div class="divisions">
+              <div class="divisions--recipes">
+                <i class="fas fa-info-circle"></i>
+                <p></i>Masz już <span>XX</span> przepisów, nieźle!</p>
+                <button class="division--close-button"><i class="fas fa-window-close"></i></button>
+              </div>
+              <div class="divisions--plan">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Pamiętaj, aby dodać plan!</p><button class="division--close-button"><i
+                    class="fas fa-window-close"></i></button>
+              </div>
+              <div class="divisions--enjoy">
+                <i class="fas fa-check-circle"></i>
+                <p>Świetnie, że jesteś! Udanego planowania i smacznego! :)</p><button class="division--close-button"><i
+                    class="fas fa-window-close"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="weekplan">
+            <p class="weekplan--info">Twój plan na <span class="weekplan--info_weeknum">{nr tygodnia}</span> tydzień</p>
+            <table class="weekplan--table">
+              <tr class="weekplan--table_days">
+                <th>Poniedziałek</th>
+                <th>Wtorek</th>
+                <th>Środa</th>
+                <th>Czwartek</th>
+                <th>Piątek</th>
+                <th>Sobota</th>
+                <th>Niedziela</th>
+              </tr>
+              <tr class="weekplan--table_breakfast">
+                <td>śniadanie</td>
+                <td>śniadanie</td>
+                <td>śniadanie</td>
+                <td>śniadanie</td>
+                <td>śniadanie</td>
+                <td>śniadanie</td>
+                <td>śniadanie</td>
+              </tr>
+              <tr class="weekplan--table_secbreakfast">
+                <td>drugie śniadanie</td>
+                <td>drugie śniadanie</td>
+                <td>drugie śniadanie</td>
+                <td>drugie śniadanie</td>
+                <td>drugie śniadanie</td>
+                <td>drugie śniadanie</td>
+                <td>drugie śniadanie</td>
+              </tr>
+              <tr class="weekplan--table_soup">
+                <td>zupa</td>
+                <td>zupa</td>
+                <td>zupa</td>
+                <td>zupa</td>
+                <td>zupa</td>
+                <td>zupa</td>
+                <td>zupa</td>
+              </tr>
+              <tr class="weekplan--table_maincourse">
+                <td>drugie danie</td>
+                <td>drugie danie</td>
+                <td>drugie danie</td>
+                <td>drugie danie</td>
+                <td>drugie danie</td>
+                <td>drugie danie</td>
+                <td>drugie danie</td>
+              </tr>
+              <tr class="weekplan--table_supper">
+                <td>supper</td>
+                <td>supper</td>
+                <td>supper</td>
+                <td>supper</td>
+                <td>supper</td>
+                <td>supper</td>
+                <td>supper</td>
+              </tr>
+            </table>
+            <div class="weekplan--buttons">
+              <button class="weekplan--buttons-prevweek"><i class="fas fa-angle-double-right"></i>poprzedni</button>
+              <button class="weekplan--buttons-nextweek">następny<i class="fas fa-angle-double-right"></i></button>
+            </div>
+          </div>
         </section>
 
         <section>

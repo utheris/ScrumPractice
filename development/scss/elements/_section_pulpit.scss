@@ -1,0 +1,229 @@
+.main_section {
+
+    .pulpit {
+        //Wyłącznie okna imienia użytkownika musi podmienić display:none -> display:flex!
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        justify-self: flex-start;
+        align-self: flex-start;
+
+        .widgets {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 30%;
+
+                [class*="button--"] {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 200px;
+                    height: 200px;
+                    outline: none;
+                }
+
+                .button--recipe-add {
+                    border: 1px dashed $widgetButtonRecipeBorderColor;
+                    background-color: $widgetButtonRecipeBgColor;
+                    color: $widgetButtonRecipeTextColor;
+                    margin-right: 20px;
+
+                    i {
+                        font-size: 60px;
+                        margin-bottom: 20px;
+                    }
+
+                    span {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                }
+
+                .button--plan-add {
+                    border: 1px dashed $widgetButtonPlanBorderColor;
+                    background-color: $widgetButtonPlanBgColor;
+                    color: $widgetButtonPlanTextColor;
+
+                    i {
+                        font-size: 60px;
+                        margin-bottom: 20px;
+                    }
+
+                    span {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .divisions {
+                width: 70%;
+                height: 200px;
+                margin-left: 30px;
+                display: flex;
+                flex-direction: column;
+
+                [class*="divisions--"] {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 60px;
+                    width: 100%;
+                    border: 1px dashed red;
+                    margin-bottom: 10px;
+                    line-height: 60px;
+                    background-color: $widgetDivisionsBgColor;
+
+                    i {
+                        font-size: 40px;
+                        margin-right: 10px;
+                        margin-left: 10px;
+                    }
+
+                    p {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+
+                    button {
+                        position: absolute;
+                        top: 5px;
+                        right: -5px;
+                        display: inline-block;
+                        background: none;
+                        border: none;
+                        outline: none;
+
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .divisions--recipes {
+                    color: $widgetDivisionsRecipesTextColor;
+                    border-color: $widgetDivisionsRecipesBorderColor;
+
+                    button {
+                        i {
+                            color: $widgetDivisionsRecipesTextColor;
+                        }
+                    }
+                }
+
+                .divisions--plan {
+                    color: $widgetDivisionsPlanTextColor;
+                    border-color: $widgetDivisionsPlanBorderColor;
+
+                    button {
+                        i {
+                            color: $widgetDivisionsPlanTextColor;
+                        }
+                    }
+                }
+
+                .divisions--enjoy {
+                    color: $widgetDivisionsEnjoyTextColor;
+                    border-color: $widgetDivisionsEnjoyBroderColor;
+
+                    button {
+                        i {
+                            color: $widgetDivisionsEnjoyTextColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .weekplan {
+            width: 100%;
+            margin: 0 auto;
+            background-color: $weekplanTableBgColor;
+
+            .weekplan--info {
+                color: $weekplanTablenameTextColor;
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+
+            }
+
+            .weekplan--table {
+                width: 100%;
+                text-align: center;
+                padding-left: 40px;
+                padding-right: 40px;
+
+                [class*="weekplan--table"] {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    table-layout: fixed;
+
+                    td {
+                        width: calc(100% / 7);
+                        word-wrap: break-word;
+                        line-height: 40px;
+                        border-bottom: 1px solid $weekplanTableBorderColor;
+                        color: $weekplanTableMealsTextColor;
+                    }
+                }
+
+                .weekplan--table_days {
+                    border-top: 1px solid $weekplanTableBorderColor;
+
+                    th {
+                        width: calc(100% / 7);
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: $weekplanTableDaysTextColor;
+                        border-bottom: 1px solid $weekplanTableBorderColor;
+                    }
+                }
+            }
+
+            .weekplan--buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 30px;
+
+                [class*="weekplan--buttons-"] {
+                    background: none;
+                    border: none;
+                    font-size: 14px;
+                    color: $weekplanButtonsTextColor;
+
+                    &:nth-of-type(1) {
+                        i {
+                            transform: rotateY(180deg);
+                            margin-right: 10px;
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        i {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
