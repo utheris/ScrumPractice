@@ -18,30 +18,43 @@
     }
 
     p {
+        width: 80%;
         font-size: 30px;
         text-align: center;
     }
 
-    input[type=text] {
-        font-size: 30px;
-        padding: 5px;
-
-        &::placeholder {
-            color: $placeholderColor;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        input[type=text] {
+            width: 450px;
+            height: 40px;
+            font-size: 24px;
+            padding: 5px;
+    
+            &::placeholder {
+                color: $placeholderColor;
+                font-size: 18px;
+            }
+    
+            &:focus {
+                outline: none;
+                border: 1px solid $buttonsBgColor;
+            }
+        }
+    
+        button {
+            background-color: $buttonsBgColor;
+            width: 40%;
+            padding: 10px 20px;
+            border: none;
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
         }
 
-        &:focus {
-            outline: none;
-            border: 1px solid $buttonsBgColor;
-        }
     }
 
-    input[type=submit] {
-        background-color: $buttonsBgColor;
-        padding: 10px 20px;
-        border: none;
-        font-size: 26px;
-        color: white;
-        cursor: pointer;
-    }
 }
