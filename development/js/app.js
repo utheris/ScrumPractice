@@ -79,3 +79,94 @@ nextWeekButton.addEventListener("click", function () {
   weeknumspan.innerText = numberofweek;
 });
 weeknumspan.innerText = numberofweek;
+
+//Dodawanie przepisu logika 
+const recipename = document.querySelector(".recipe-name_input");
+const recipeabout = document.querySelector(".recipe-about_input");
+const instructionList = document.querySelector(".instructions-list");
+const instructioninput = document.querySelector(".instructions-input");
+const indigrientsList = document.querySelector(".indigrients-list");
+const indigrientsinput = document.querySelector(".indigrients_input");
+const addInstruction = document.querySelector(".instructions-add");
+const addIndigrients = document.querySelector(".indigrients-add");
+
+// <i class="fas fa-trash-alt"></i> - śmietnik
+// <i class="fas fa-edit"></i> - edycja planu
+// <i class="far fa-save"></i> - save icon
+//  let newSaveIcon = document.createElement("i"); - ikonka zapisu
+addInstruction.addEventListener('click', function (e) {
+  e.preventDefault();
+  let newLi = document.createElement("li");
+  let newSpan = document.createElement("span");
+  let newTrashIcon = document.createElement("i");
+  let newEditIcon = document.createElement("i");
+  let newSaveIcon = document.createElement("i");
+  newTrashIcon.className = "fas fa-trash-alt";
+  newTrashIcon.style.color = "red";
+  newEditIcon.className = "fas fa-edit";
+  newEditIcon.style.color = "gold";
+  newEditIcon.style.margin = "0 5px";
+  newSaveIcon.className = "far fa-save";
+  newSaveIcon.style.color = "blue";
+  newSaveIcon.style.display = "none";
+  newSaveIcon.style.margin = "0 5px";
+  newSpan.innerText = instructioninput.value;
+  newLi.appendChild(newSpan);
+  newLi.appendChild(newEditIcon);
+  newLi.appendChild(newSaveIcon);
+  newLi.appendChild(newTrashIcon);
+  instructioninput.value = "";
+  instructionList.appendChild(newLi);
+  newTrashIcon.addEventListener('click', function () {
+    this.parentElement.style.display = "none";
+  });
+  newEditIcon.addEventListener('click', function () {
+    this.previousSibling.contentEditable = "true";
+    newEditIcon.style.display = "none";
+    newSaveIcon.style.display = "inline";
+  });
+  newSaveIcon.addEventListener('click', function () {
+    this.previousSibling.previousSibling.contentEditable = "false";
+    newSaveIcon.style.display = "none";
+    newEditIcon.style.display = "inline";
+  });
+});
+
+addIndigrients.addEventListener('click', function (e) {
+  e.preventDefault();
+  let newLi = document.createElement("li");
+  let newSpan = document.createElement("span");
+  let newTrashIcon = document.createElement("i");
+  let newEditIcon = document.createElement("i");
+  let newSaveIcon = document.createElement("i");
+  newTrashIcon.className = "fas fa-trash-alt";
+  newTrashIcon.style.color = "red";
+  newEditIcon.className = "fas fa-edit";
+  newEditIcon.style.color = "gold";
+  newEditIcon.style.margin = "0 5px";
+  newSaveIcon.className = "far fa-save";
+  newSaveIcon.style.color = "blue";
+  newSaveIcon.style.display = "none";
+  newSaveIcon.style.margin = "0 5px";
+  newSpan.innerText = indigrientsinput.value;
+  newLi.appendChild(newSpan);
+  newLi.appendChild(newEditIcon);
+  newLi.appendChild(newSaveIcon);
+  newLi.appendChild(newTrashIcon);
+  indigrientsList.appendChild(newLi);
+  indigrientsinput.value = "";
+  newTrashIcon.addEventListener('click', function () {
+    this.parentElement.style.display = "none";
+  });
+  newEditIcon.addEventListener('click', function () {
+    this.previousSibling.contentEditable = "true";
+    newEditIcon.style.display = "none";
+    newSaveIcon.style.display = "inline";
+  });
+  newSaveIcon.addEventListener('click', function () {
+    this.previousSibling.previousSibling.contentEditable = "false";
+    newSaveIcon.style.display = "none";
+    newEditIcon.style.display = "inline";
+  });
+
+});
