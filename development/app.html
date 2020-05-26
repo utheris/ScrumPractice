@@ -18,7 +18,10 @@
         <span class="first">Zaplanuj</span>
         <span class="second">Jedzonko</span>
       </h1>
-      <h2>Imię</h2>
+      <div class="user">
+        <h2 id="user_name"></h2>
+        <a onclick="logout()" href="#"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
     </header>
     <div class="container">
       <nav class="left_nav">
@@ -30,12 +33,14 @@
       </nav>
 
       <main class="main_section">
-        <section class="first_entry">
+        <section class="first_entry" id="first_entry">
           <!-- First entry -->
           <h2>Witaj,</h2>
-          <p>wygląda na to że jesteś tu pierwszy raz!</p>
-          <input type="text" placeholder="Wpisz swoje imię">
-          <input type="submit" value="Gotowe!">
+          <p>wygląda na to, że jesteś tu pierwszy raz!</p>
+          <form action="#" onsubmit="callme()" >
+            <input id="inputName" type="text" placeholder="tutaj wpisz jak masz na imię">
+            <button type="submit" value="submit">Gotowe!</button>
+          </form>
           <p>Podaj swoje imię, a my zorganizujemy dla ciebie naszą aplikację</p>
 
         </section>

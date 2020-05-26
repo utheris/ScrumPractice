@@ -22,18 +22,28 @@ header {
             font-weight: 700;
         }
     }
-
-    h2 {
-        color: white;
-        font-size: 24px;
-        font-weight: normal;
-
-        &:after {
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            content: "\f007";
-            margin-left: 20px;
-            color: $avatarColor;
+    .user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2 {
+            color: white;
+            font-size: 24px;
+            font-weight: normal;
+    
+            &:after {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f007";
+                margin-left: 20px;
+                color: $avatarColor;
+            }
         }
+        i {
+            padding: 5px;
+            color: white;
+            font-size: 24px;
+        }
+        
     }
 }

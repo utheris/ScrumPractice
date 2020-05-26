@@ -1,3 +1,24 @@
+// 2.3_Przechowywanie_i_dodawanie_imienia
+
+function callme(){
+  let name = document.getElementById('inputName').value;
+  localStorage.setItem('userName', name);
+  location.reload()
+}
+
+function logout(){
+  localStorage.setItem('userName', "");
+  location.reload()
+}
+
+window.onload = function() {
+  document.getElementById('user_name').innerText = "Witaj, " + localStorage.getItem('userName');
+  if (localStorage.userName !== "") {
+      document.getElementById("first_entry").style.visibility = "hidden";
+  }
+};
+// Koniec 2.3_Przechowywanie_i_dodawanie_imienia
+
 const recipeAddButton = document.querySelector(".button--recipe-add");
 const planAddButton = document.querySelector(".button--plan-add");
 const widgetCloseButton = document.querySelectorAll(".division--close-button");
