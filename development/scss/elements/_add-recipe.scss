@@ -1,108 +1,114 @@
-.add-recipe {
-    margin: 0 auto;
-    width: 80vw;
-}
-
-.top-bar {
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    border-bottom: 2px solid $topBarTextColor;
-
-    h3 {
-        font-weight: normal;
-        font-size: 24px;
-        text-transform: uppercase;
-        color: #ff6600;
-    }
-
-    .btn-closensave {
-        font-size: 18px;
-        font-weight: bald;
-        padding: 5px 10px;
-        border: none;
-        color: #fff;
-        background-color: #ff6600;
-    }
-}
-
-.recipe-name {
-    margin-bottom: 20px;
-
-    label {
-        font-size: 24px;
-    }
-
-    input {
-        width: 70%;
-    }
-}
-
-.recipe-about {
-    display: flex;
-
-    label {
-        line-height: 0;
-        font-size: 24px;
-    }
-
-    textarea {
-        padding: 2px;
-        margin-left: 24px;
-        width: 70%;
-    }
-}
-
-.recipe-container {
-    margin: 20px auto;
-    display: flex;
+.main_section {
+    .add-recipe {
+        align-self: flex-start;
+        width: 100%;
+        display: none;
 
 
-    h3 {
-        font-size: 24px;
-        text-transform: uppercase;
-        font-weight: normal;
-        border-bottom: 1px solid #5B605F;
-    }
+        .top-bar {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            border-bottom: 2px solid $topBarTextColor;
 
-    .instrucions {
-        width: 50%;
-
-        .instructions-container {
-            margin-top: 20px;
-
-            .instructions-input {
-                width: 90%;
-                height: 150px;
-                padding: 10px;
-                resize: none;
+            h3 {
+                font-weight: normal;
+                font-size: 24px;
+                text-transform: uppercase;
+                color: #ff6600;
             }
 
-
+            .btn-closensave {
+                font-size: 18px;
+                font-weight: bald;
+                padding: 5px 10px;
+                border: none;
+                color: #fff;
+                background-color: #ff6600;
+            }
         }
-    }
 
-    .indigrients {
-        margin-left: 20px;
-        width: 50%;
+        .recipe-name {
+            margin-bottom: 20px;
 
-        input {
-            margin-top: 20px;
-            width: 80%;
-            padding: 10px;
+            label {
+                font-size: 24px;
+            }
+
+            input {
+                width: 70%;
+            }
         }
-    }
 
-    .instructions-list,
-    .indigrients-list {
-        margin: 20px 10px;
-    }
-}
+        .recipe-about {
+            display: flex;
 
-.instructions-add,
-.indigrients-add {
-    font-size: 30px;
-    color: green;
+            label {
+                line-height: 0;
+                font-size: 24px;
+            }
+
+            textarea {
+                padding: 2px;
+                margin-left: 24px;
+                width: 70%;
+            }
+        }
+
+        .recipe-container {
+            margin: 20px auto;
+            display: flex;
+
+
+            h3 {
+                font-size: 24px;
+                text-transform: uppercase;
+                font-weight: normal;
+                border-bottom: 1px solid #5B605F;
+            }
+
+            .instrucions {
+                width: 50%;
+
+                .instructions-container {
+                    margin-top: 20px;
+
+                    .instructions-input {
+                        width: 90%;
+                        height: 150px;
+                        padding: 10px;
+                        resize: none;
+                    }
+
+
+                }
+            }
+
+            .indigrients {
+                margin-left: 20px;
+                width: 50%;
+
+                input {
+                    margin-top: 20px;
+                    width: 80%;
+                    padding: 10px;
+                }
+            }
+
+            .instructions-add,
+            .indigrients-add {
+                font-size: 30px;
+                color: green;
+            }
+
+            .instructions-list,
+            .indigrients-list {
+                margin: 20px 10px;
+            }
+        }
+
+
+    }
 }

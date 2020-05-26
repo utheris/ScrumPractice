@@ -1,0 +1,18 @@
+nav.left_nav {
+    background-color: #5B605F;
+    width: 20%;
+    height: 90vh;
+
+    ul.left_nav_ul {
+        li {
+            padding: 30px;
+
+            a {
+                width: 100%;
+                color: white;
+                font-size: 24px;
+                padding: 30px;
+            }
+        }
+    }
+}
