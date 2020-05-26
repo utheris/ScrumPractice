@@ -1,4 +1,5 @@
 .first_entry {
+
     background-color: #FFFFFA;
     height: 100%;
     width: 100%;
@@ -28,23 +29,24 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         input[type=text] {
             width: 450px;
             height: 40px;
             font-size: 24px;
             padding: 5px;
-    
+
             &::placeholder {
                 color: $placeholderColor;
                 font-size: 18px;
             }
-    
+
             &:focus {
                 outline: none;
                 border: 1px solid $buttonsBgColor;
             }
         }
-    
+
         button {
             background-color: $buttonsBgColor;
             width: 40%;

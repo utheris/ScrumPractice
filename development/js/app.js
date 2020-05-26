@@ -1,20 +1,20 @@
 // 2.3_Przechowywanie_i_dodawanie_imienia
 
-function callme(){
+function callme() {
   let name = document.getElementById('inputName').value;
   localStorage.setItem('userName', name);
   location.reload()
 }
 
-function logout(){
+function logout() {
   localStorage.setItem('userName', "");
   location.reload()
 }
 
-window.onload = function() {
+window.onload = function () {
   document.getElementById('user_name').innerText = "Witaj, " + localStorage.getItem('userName');
   if (localStorage.userName !== "") {
-      document.getElementById("first_entry").style.visibility = "hidden";
+    document.getElementById("first_entry").style.visibility = "hidden";
   }
 };
 // Koniec 2.3_Przechowywanie_i_dodawanie_imienia
