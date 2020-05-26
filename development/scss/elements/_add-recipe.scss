@@ -2,7 +2,7 @@
     .add-recipe {
         align-self: flex-start;
         width: 100%;
-        display: none;
+        display: block;
 
 
         .top-bar {
@@ -81,8 +81,10 @@
                         padding: 10px;
                         resize: none;
                     }
+                }
 
-
+                ol {
+                    list-style: decimal;
                 }
             }
 
@@ -94,6 +96,10 @@
                     margin-top: 20px;
                     width: 80%;
                     padding: 10px;
+                }
+
+                ul {
+                    list-style: disc;
                 }
             }
 
