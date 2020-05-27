@@ -89,7 +89,7 @@ const indigrientsList = document.querySelector(".indigrients-list");
 const indigrientsinput = document.querySelector(".indigrients_input");
 const addInstruction = document.querySelector(".instructions-add");
 const addIndigrients = document.querySelector(".indigrients-add");
-
+const saveExitBtn = document.querySelector(".btn-closensave")
 // <i class="fas fa-trash-alt"></i> - śmietnik
 // <i class="fas fa-edit"></i> - edycja planu
 // <i class="far fa-save"></i> - save icon
@@ -110,26 +110,32 @@ addInstruction.addEventListener('click', function (e) {
   newSaveIcon.style.color = "blue";
   newSaveIcon.style.display = "none";
   newSaveIcon.style.margin = "0 5px";
-  newSpan.innerText = instructioninput.value;
-  newLi.appendChild(newSpan);
-  newLi.appendChild(newEditIcon);
-  newLi.appendChild(newSaveIcon);
-  newLi.appendChild(newTrashIcon);
-  instructioninput.value = "";
-  instructionList.appendChild(newLi);
-  newTrashIcon.addEventListener('click', function () {
-    this.parentElement.style.display = "none";
-  });
-  newEditIcon.addEventListener('click', function () {
-    this.previousSibling.contentEditable = "true";
-    newEditIcon.style.display = "none";
-    newSaveIcon.style.display = "inline";
-  });
-  newSaveIcon.addEventListener('click', function () {
-    this.previousSibling.previousSibling.contentEditable = "false";
-    newSaveIcon.style.display = "none";
-    newEditIcon.style.display = "inline";
-  });
+
+  if (instructioninput.value == "") {
+    alert("Wpisz instrukcje ziomek")
+  } else {
+    newSpan.innerText = instructioninput.value;
+    newLi.appendChild(newSpan);
+    newLi.appendChild(newEditIcon);
+    newLi.appendChild(newSaveIcon);
+    newLi.appendChild(newTrashIcon);
+    instructioninput.value = "";
+    instructionList.appendChild(newLi);
+    newTrashIcon.addEventListener('click', function () {
+      this.parentElement.style.display = "none";
+    });
+    newEditIcon.addEventListener('click', function () {
+      this.previousSibling.contentEditable = "true";
+      newEditIcon.style.display = "none";
+      newSaveIcon.style.display = "inline";
+    });
+    newSaveIcon.addEventListener('click', function () {
+      this.previousSibling.previousSibling.contentEditable = "false";
+      newSaveIcon.style.display = "none";
+      newEditIcon.style.display = "inline";
+    });
+  }
+
 });
 
 addIndigrients.addEventListener('click', function (e) {
@@ -148,25 +154,76 @@ addIndigrients.addEventListener('click', function (e) {
   newSaveIcon.style.color = "blue";
   newSaveIcon.style.display = "none";
   newSaveIcon.style.margin = "0 5px";
-  newSpan.innerText = indigrientsinput.value;
-  newLi.appendChild(newSpan);
-  newLi.appendChild(newEditIcon);
-  newLi.appendChild(newSaveIcon);
-  newLi.appendChild(newTrashIcon);
-  indigrientsList.appendChild(newLi);
-  indigrientsinput.value = "";
-  newTrashIcon.addEventListener('click', function () {
-    this.parentElement.style.display = "none";
-  });
-  newEditIcon.addEventListener('click', function () {
-    this.previousSibling.contentEditable = "true";
-    newEditIcon.style.display = "none";
-    newSaveIcon.style.display = "inline";
-  });
-  newSaveIcon.addEventListener('click', function () {
-    this.previousSibling.previousSibling.contentEditable = "false";
-    newSaveIcon.style.display = "none";
-    newEditIcon.style.display = "inline";
-  });
+  if (indigrientsinput.value == "") {
+    alert("Wpisz nazwę produktu");
+  } else {
+    newSpan.innerText = indigrientsinput.value;
+    newLi.appendChild(newSpan);
+    newLi.appendChild(newEditIcon);
+    newLi.appendChild(newSaveIcon);
+    newLi.appendChild(newTrashIcon);
+    indigrientsList.appendChild(newLi);
+    indigrientsinput.value = "";
+    newTrashIcon.addEventListener('click', function () {
+      this.parentElement.style.display = "none";
+    });
+    newEditIcon.addEventListener('click', function () {
+      this.previousSibling.contentEditable = "true";
+      newEditIcon.style.display = "none";
+      newSaveIcon.style.display = "inline";
+    });
+    newSaveIcon.addEventListener('click', function () {
+      this.previousSibling.previousSibling.contentEditable = "false";
+      newSaveIcon.style.display = "none";
+      newEditIcon.style.display = "inline";
+    });
+  }
 
+
+
+});
+//LocalStorage 
+// let allRecipies = [];
+
+let newRecipe = {
+  id: null,
+  title: "",
+  description: "",
+  ingidients: [],
+  instructions: []
+};
+let dataFromLocalStorage = [];
+// function saveRecipeToLocalStorage(object) {
+//   let allRecipies = [];
+//   if​ (localStorage.getItem(​"recipes"​) != ​null​) {
+//     allRecipies = ​JSON​.parse(localStorage.getItem(​"recipes"​));
+//     allRecipies.push(object);
+//     localStorage.setItem("recipes", JSON.stringify(allRecipies));
+//   } else {
+//     allRecipies.push(object);
+//     localStorage.setItem(​"recipes"​, ​JSON​.stringify(allRecipies));
+//   }
+// }
+function saveRecipeToLocalStorage(newObject) {
+
+  if (localStorage.getItem("recipes") != null) {
+    dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
+    dataFromLocalStorage.push(newObject);
+    localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
+  } else {
+    dataFromLocalStorage.push(newObject);
+    localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
+  }
+  alert("Przepis zapisany do localStorage");
+}
+
+saveExitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  newRecipe.id = dataFromLocalStorage.length + 1;
+  newRecipe.title = recipename.value;
+  newRecipe.description = recipeabout.value;
+  newRecipe.ingidients.push(indigrientsList);
+  newRecipe.instructions.push(instructionList);
+  saveRecipeToLocalStorage(newRecipe);
+  console.log("zapisano", newRecipe);
 });
