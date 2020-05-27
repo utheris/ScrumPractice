@@ -14,7 +14,8 @@ function logout() {
 window.onload = function () {
   document.getElementById('user_name').innerText = "Witaj, " + localStorage.getItem('userName');
   if (localStorage.userName !== "") {
-    document.getElementById("first_entry").style.visibility = "hidden";
+    document.getElementById("first_entry").style.display = "none";
+    document.querySelector(".pulpit").style.display = "flex";
   }
 };
 // Koniec 2.3_Przechowywanie_i_dodawanie_imienia
@@ -227,3 +228,6 @@ saveExitBtn.addEventListener("click", function (e) {
   saveRecipeToLocalStorage(newRecipe);
   console.log("zapisano", newRecipe);
 });
+
+const planCounter = document.querySelector(".plancounter");
+planCounter.innerText = dataFromLocalStorage.length;
