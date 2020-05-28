@@ -218,7 +218,12 @@ function saveRecipeToLocalStorage(newObject) {
 saveExitBtn.addEventListener("click", function (e) {
   const planCounter = document.querySelector(".plancounter");
   e.preventDefault();
-  newRecipe.id = dataFromLocalStorage.length + 1;
+  if (JSON.parse(localStorage.getItem("recipes")) == null) {
+    newRecipe.id = 1;
+  } else {
+    newRecipe.id = JSON.parse(localStorage.getItem("recipes")).length + 1;
+  }
+
   newRecipe.title = recipename.value;
   newRecipe.description = recipeabout.value;
   // newRecipe.ingidients.push(indigrientsList);

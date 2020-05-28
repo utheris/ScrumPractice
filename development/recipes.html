@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <span class="first">Zaplanuj</span>
+                <span class="second">Jedzonko</span>
+            </h1>
+            <div class="user">
+                <h2 id="user_name"></h2>
+                <a onclick="logout()" href="#"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </header>
+        <div class="container">
+            <nav class="left_nav">
+                <ul class="left_nav_ul">
+                    <li><a href="app.html">Pulpit</a></li>
+                    <li><a href="recipes.html">Przepisy</a></li>
+                    <li><a href="schedules.html">Plany</a></li>
+                </ul>
+            </nav>
+
+            <main class="main_section">
+                <section class="recipes">
+                    <div class="recipes--header">
+                        <span>LISTA PRZEPISÓW</span>
+                        <a href="" class="recipes-add_recipe"><i class="fas fa-plus-square"></i></a>
+                    </div>
+                    <table class="recipes--table">
+                        <tr class="recipes--table_header">
+                            <th class="recipes--table_header_id">ID</th>
+                            <th class="recipes--table_header_name">NAZWA</th>
+                            <th class="recipes--table_header_description">OPIS</th>
+                            <th class="recipes--table_header_actions">AKCJE</th>
+                        </tr>
+                    </table>
+                </section>
+            </main>
+        </div>
+
+
+    </div>
+    <script src="./js/recipe.js"></script>
+</body>
+
+</html>
