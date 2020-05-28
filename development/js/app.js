@@ -14,8 +14,10 @@ function logout() {
 window.onload = function () {
   document.getElementById('user_name').innerText = "Witaj, " + localStorage.getItem('userName');
   if (localStorage.userName !== "") {
+    const planCounter = document.querySelector(".plancounter");
     document.getElementById("first_entry").style.display = "none";
     document.querySelector(".pulpit").style.display = "flex";
+    planCounter.innerText = JSON.parse(localStorage.getItem("recipes")).length;
   }
 };
 // Koniec 2.3_Przechowywanie_i_dodawanie_imienia
@@ -36,24 +38,16 @@ console.log(
 );
 
 // Te przyciski do dorobienia jak będzie dodawanie przepisu i dodawanie planu
-// recipeAddButton.addEventListener('click', function () {
-//     if (windowpopupname.style.display = none) {
-//         windowpopupname.style.display = block;
-//     }
-// });
+recipeAddButton.addEventListener('click', function () {
+  document.querySelector(".pulpit").style.display = "none";
+  document.querySelector(".add-recipe").style.display = "block";
+});
 
 // planAddButton.addEventListener('click', function () {
 //     if (windowpopupname2.style.display = none) {
 //         windowpopupname2.style.display = block;
 //     }
 // });
-
-//Opcja z forEach...
-// widgetCloseButton.forEach(function (e) {
-//     e.addEventListener('click', function () {
-//         e.parentElement.style.display = 'none';
-//     });
-// })
 
 for (let i = 0; i < widgetCloseButton.length; i++) {
   widgetCloseButton[i].addEventListener("click", function (e) {
@@ -217,8 +211,8 @@ function saveRecipeToLocalStorage(newObject) {
   }
   alert("Przepis zapisany do localStorage");
 }
-
 saveExitBtn.addEventListener("click", function (e) {
+  const planCounter = document.querySelector(".plancounter");
   e.preventDefault();
   newRecipe.id = dataFromLocalStorage.length + 1;
   newRecipe.title = recipename.value;
@@ -226,8 +220,8 @@ saveExitBtn.addEventListener("click", function (e) {
   newRecipe.ingidients.push(indigrientsList);
   newRecipe.instructions.push(instructionList);
   saveRecipeToLocalStorage(newRecipe);
+  document.querySelector(".pulpit").style.display = "flex";
+  document.querySelector(".add-recipe").style.display = "none";
   console.log("zapisano", newRecipe);
+  planCounter.innerText = JSON.parse(localStorage.getItem("recipes")).length;
 });
-
-const planCounter = document.querySelector(".plancounter");
-planCounter.innerText = dataFromLocalStorage.length;
