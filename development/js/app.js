@@ -1,23 +1,30 @@
 // 2.3_Przechowywanie_i_dodawanie_imienia
 
 function callme() {
-  let name = document.getElementById('inputName').value;
-  localStorage.setItem('userName', name);
-  location.reload()
+  let name = document.getElementById("inputName").value;
+  localStorage.setItem("userName", name);
+  location.reload();
 }
 
 function logout() {
-  localStorage.setItem('userName', "");
-  location.reload()
+  localStorage.setItem("userName", "");
+  location.reload();
 }
 
 window.onload = function () {
-  document.getElementById('user_name').innerText = "Witaj, " + localStorage.getItem('userName');
+  document.getElementById("user_name").innerText =
+    "Witaj, " + localStorage.getItem("userName");
   if (localStorage.userName !== "") {
     const planCounter = document.querySelector(".plancounter");
     document.getElementById("first_entry").style.display = "none";
     document.querySelector(".pulpit").style.display = "flex";
-    planCounter.innerText = JSON.parse(localStorage.getItem("recipes")).length;
+    if (localStorage.getItem("recipes") == null) {
+      planCounter.innerText = "0";
+    } else {
+      planCounter.innerText = JSON.parse(
+        localStorage.getItem("recipes")
+      ).length;
+    }
   }
 };
 // Koniec 2.3_Przechowywanie_i_dodawanie_imienia
@@ -38,7 +45,7 @@ console.log(
 );
 
 // Te przyciski do dorobienia jak będzie dodawanie przepisu i dodawanie planu
-recipeAddButton.addEventListener('click', function () {
+recipeAddButton.addEventListener("click", function () {
   document.querySelector(".pulpit").style.display = "none";
   document.querySelector(".add-recipe").style.display = "block";
 });
@@ -75,7 +82,7 @@ nextWeekButton.addEventListener("click", function () {
 });
 weeknumspan.innerText = numberofweek;
 
-//Dodawanie przepisu logika 
+//Dodawanie przepisu logika
 const recipename = document.querySelector(".recipe-name_input");
 const recipeabout = document.querySelector(".recipe-about_input");
 const instructionList = document.querySelector(".instructions-list");
@@ -84,12 +91,12 @@ const indigrientsList = document.querySelector(".indigrients-list");
 const indigrientsinput = document.querySelector(".indigrients_input");
 const addInstruction = document.querySelector(".instructions-add");
 const addIndigrients = document.querySelector(".indigrients-add");
-const saveExitBtn = document.querySelector(".btn-closensave")
+const saveExitBtn = document.querySelector(".btn-closensave");
 // <i class="fas fa-trash-alt"></i> - śmietnik
 // <i class="fas fa-edit"></i> - edycja planu
 // <i class="far fa-save"></i> - save icon
 //  let newSaveIcon = document.createElement("i"); - ikonka zapisu
-addInstruction.addEventListener('click', function (e) {
+addInstruction.addEventListener("click", function (e) {
   e.preventDefault();
   let newLi = document.createElement("li");
   let newSpan = document.createElement("span");
@@ -107,7 +114,7 @@ addInstruction.addEventListener('click', function (e) {
   newSaveIcon.style.margin = "0 5px";
 
   if (instructioninput.value == "") {
-    alert("Wpisz instrukcje ziomek")
+    alert("Wpisz instrukcje ziomek");
   } else {
     newSpan.innerText = instructioninput.value;
     newLi.appendChild(newSpan);
@@ -116,24 +123,24 @@ addInstruction.addEventListener('click', function (e) {
     newLi.appendChild(newTrashIcon);
     instructioninput.value = "";
     instructionList.appendChild(newLi);
-    newTrashIcon.addEventListener('click', function () {
+    newTrashIcon.addEventListener("click", function () {
       this.parentElement.style.display = "none";
     });
-    newEditIcon.addEventListener('click', function () {
+    newEditIcon.addEventListener("click", function () {
       this.previousSibling.contentEditable = "true";
       newEditIcon.style.display = "none";
       newSaveIcon.style.display = "inline";
     });
-    newSaveIcon.addEventListener('click', function () {
+    newSaveIcon.addEventListener("click", function () {
       this.previousSibling.previousSibling.contentEditable = "false";
       newSaveIcon.style.display = "none";
       newEditIcon.style.display = "inline";
     });
+    newRecipe.instructions.push(newSpan.innerText);
   }
-
 });
 
-addIndigrients.addEventListener('click', function (e) {
+addIndigrients.addEventListener("click", function (e) {
   e.preventDefault();
   let newLi = document.createElement("li");
   let newSpan = document.createElement("span");
@@ -159,25 +166,23 @@ addIndigrients.addEventListener('click', function (e) {
     newLi.appendChild(newTrashIcon);
     indigrientsList.appendChild(newLi);
     indigrientsinput.value = "";
-    newTrashIcon.addEventListener('click', function () {
+    newTrashIcon.addEventListener("click", function () {
       this.parentElement.style.display = "none";
     });
-    newEditIcon.addEventListener('click', function () {
+    newEditIcon.addEventListener("click", function () {
       this.previousSibling.contentEditable = "true";
       newEditIcon.style.display = "none";
       newSaveIcon.style.display = "inline";
     });
-    newSaveIcon.addEventListener('click', function () {
+    newSaveIcon.addEventListener("click", function () {
       this.previousSibling.previousSibling.contentEditable = "false";
       newSaveIcon.style.display = "none";
       newEditIcon.style.display = "inline";
     });
+    newRecipe.ingidients.push(newSpan.innerText);
   }
-
-
-
 });
-//LocalStorage 
+//LocalStorage
 // let allRecipies = [];
 
 let newRecipe = {
@@ -185,7 +190,7 @@ let newRecipe = {
   title: "",
   description: "",
   ingidients: [],
-  instructions: []
+  instructions: [],
 };
 let dataFromLocalStorage = [];
 // function saveRecipeToLocalStorage(object) {
@@ -200,7 +205,6 @@ let dataFromLocalStorage = [];
 //   }
 // }
 function saveRecipeToLocalStorage(newObject) {
-
   if (localStorage.getItem("recipes") != null) {
     dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
     dataFromLocalStorage.push(newObject);
@@ -217,8 +221,8 @@ saveExitBtn.addEventListener("click", function (e) {
   newRecipe.id = dataFromLocalStorage.length + 1;
   newRecipe.title = recipename.value;
   newRecipe.description = recipeabout.value;
-  newRecipe.ingidients.push(indigrientsList);
-  newRecipe.instructions.push(instructionList);
+  // newRecipe.ingidients.push(indigrientsList);
+  // newRecipe.instructions.push(instructionList);
   saveRecipeToLocalStorage(newRecipe);
   document.querySelector(".pulpit").style.display = "flex";
   document.querySelector(".add-recipe").style.display = "none";
