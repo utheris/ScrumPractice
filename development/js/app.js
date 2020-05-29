@@ -234,3 +234,5 @@ saveExitBtn.addEventListener("click", function (e) {
   console.log("zapisano", newRecipe);
   planCounter.innerText = JSON.parse(localStorage.getItem("recipes")).length;
 });
+
+// usuwanie przepisu z listy przepisów
