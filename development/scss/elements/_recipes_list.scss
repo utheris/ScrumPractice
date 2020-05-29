@@ -1,0 +1,220 @@
+.main_section {
+    .recipes {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: $recipeTableBgColor;
+
+        .recipes--header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 40px;
+            border-bottom: 3px solid $recipesListHeaderBorderColor;
+
+            span {
+                color: $recipesListHeaderTextColor;
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            .recipes-add_recipe {
+                font-size: 30px;
+                color: green;
+            }
+        }
+
+        .recipes--table {
+            width: 100%;
+            text-align: center;
+            padding-left: 40px;
+            padding-right: 40px;
+
+            tr {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: stretch;
+                table-layout: fixed;
+
+                &.recipes--table_header {
+                    border-bottom: 1px solid $weekplanTableBorderColor;
+                    border-top: 1px solid $weekplanTableBorderColor;
+                }
+
+                th {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: $weekplanTableDaysTextColor;
+                    text-align: left;
+
+                    &:nth-of-type(1) {
+                        width: 10%;
+                    }
+
+                    &:nth-of-type(2) {
+                        width: 30%;
+                    }
+
+                    &:nth-of-type(3) {
+                        width: 50%;
+                    }
+
+                    &:nth-of-type(4) {
+                        width: 10%;
+                    }
+                }
+
+                td {
+                    font-size: 14px;
+                    font-weight: 400;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    color: $weekplanTableDaysTextColor;
+                    border-bottom: 1px solid $weekplanTableBorderColor;
+                    text-align: left;
+                    word-wrap: break-word;
+
+                    &:nth-of-type(1) {
+                        width: 10%;
+                    }
+
+                    &:nth-of-type(2) {
+                        width: 30%;
+                    }
+
+                    &:nth-of-type(3) {
+                        width: 50%;
+                    }
+
+                    &:nth-of-type(4) {
+                        width: 10%;
+                    }
+                }
+            }
+        }
+    }
+
+    .add-recipe {
+        align-self: flex-start;
+        width: 100%;
+        display: none;
+
+        .top-bar {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            border-bottom: 2px solid $topBarTextColor;
+
+            h3 {
+                font-weight: normal;
+                font-size: 24px;
+                text-transform: uppercase;
+                color: #ff6600;
+            }
+
+            .btn-closensave {
+                font-size: 18px;
+                font-weight: bald;
+                padding: 5px 10px;
+                border: none;
+                color: #fff;
+                background-color: #ff6600;
+            }
+        }
+
+        .recipe-name {
+            margin-bottom: 20px;
+
+            label {
+                font-size: 24px;
+            }
+
+            input {
+                width: 70%;
+            }
+        }
+
+        .recipe-about {
+            display: flex;
+
+            label {
+                line-height: 0;
+                font-size: 24px;
+            }
+
+            textarea {
+                padding: 2px;
+                margin-left: 24px;
+                width: 70%;
+            }
+        }
+
+        .recipe-container {
+            margin: 20px auto;
+            display: flex;
+
+
+            h3 {
+                font-size: 24px;
+                text-transform: uppercase;
+                font-weight: normal;
+                border-bottom: 1px solid #5B605F;
+            }
+
+            .instrucions {
+                width: 50%;
+
+                .instructions-container {
+                    margin-top: 20px;
+
+                    .instructions-input {
+                        width: 90%;
+                        height: 150px;
+                        padding: 10px;
+                        resize: none;
+                    }
+                }
+
+                ol {
+                    list-style: decimal;
+                }
+            }
+
+            .indigrients {
+                margin-left: 20px;
+                width: 50%;
+
+                input {
+                    margin-top: 20px;
+                    width: 80%;
+                    padding: 10px;
+                }
+
+                ul {
+                    list-style: disc;
+                }
+            }
+
+            .instructions-add,
+            .indigrients-add {
+                font-size: 30px;
+                color: green;
+            }
+
+            .instructions-list,
+            .indigrients-list {
+                margin: 20px 10px;
+            }
+        }
+
+
+    }
+}
