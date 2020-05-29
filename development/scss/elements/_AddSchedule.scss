@@ -1,0 +1,102 @@
+.addSchedule {
+    background-color: #FFFFFA;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid rgb(203, 203, 203);
+        padding-bottom: 10px;
+
+        h2 {
+            text-transform: uppercase;
+            color: #FF6600;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: #FF6600;
+            border: none;
+            padding: 5px 15px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .schedule_menu {
+        label {
+            font-size: 24px;
+            color: #656968;
+            width: 30%;
+        }
+
+        .schedule_name,
+        .schedule_description {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input,
+        textarea {
+            width: 80%;
+        }
+
+        .schedule_week {
+            display: flex;
+            justify-content: flex-start;
+
+            label {
+                width: 30%;
+            }
+        }
+
+        input.schedule_week_input {
+            width: 7%;
+
+        }
+
+
+    }
+
+    .weekPlan {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        margin-top: 50px;
+
+        table {
+            width: 100%;
+            height: 100%;
+
+
+            th {
+                width: calc(100% / 6);
+                text-align: center;
+                border-bottom: 1px solid black;
+            }
+
+            td {
+                border-bottom: 1px solid black;
+                padding: 5px;
+            }
+
+            select {
+                width: 100%;
+                font-size: 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
