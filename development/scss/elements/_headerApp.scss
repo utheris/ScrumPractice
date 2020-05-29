@@ -22,15 +22,17 @@ header {
             font-weight: 700;
         }
     }
+
     .user {
         display: flex;
         justify-content: center;
         align-items: center;
+
         h2 {
             color: white;
             font-size: 24px;
             font-weight: normal;
-    
+
             &:after {
                 font-family: "Font Awesome 5 Free";
                 font-weight: 900;
@@ -39,11 +41,12 @@ header {
                 color: $avatarColor;
             }
         }
+
         i {
             padding: 5px;
             color: white;
             font-size: 24px;
         }
-        
+
     }
 }
