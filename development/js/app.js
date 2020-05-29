@@ -50,11 +50,11 @@ recipeAddButton.addEventListener("click", function () {
   document.querySelector(".add-recipe").style.display = "block";
 });
 
-// planAddButton.addEventListener('click', function () {
-//     if (windowpopupname2.style.display = none) {
-//         windowpopupname2.style.display = block;
-//     }
-// });
+planAddButton.addEventListener('click', function () {
+  document.querySelector(".pulpit").style.display = "none";
+  document.querySelector(".addSchedule").style.display = "block";
+}
+);
 
 for (let i = 0; i < widgetCloseButton.length; i++) {
   widgetCloseButton[i].addEventListener("click", function (e) {
